@@ -1,0 +1,284 @@
+[
+    {
+        "inputs": [
+            {
+                "internalType": "uint256",
+                "name": "assetPrice",
+                "type": "uint256"
+            }
+        ],
+        "stateMutability": "nonpayable",
+        "type": "constructor"
+    },
+    {
+        "inputs": [
+            {
+                "internalType": "uint256",
+                "name": "price",
+                "type": "uint256"
+            }
+        ],
+        "name": "PriceNotMet",
+        "type": "error"
+    },
+    {
+        "inputs": [],
+        "name": "accessGrantedAlready",
+        "type": "error"
+    },
+    {
+        "inputs": [],
+        "name": "hasRequested",
+        "type": "error"
+    },
+    {
+        "inputs": [],
+        "name": "hashNotMatch",
+        "type": "error"
+    },
+    {
+        "inputs": [],
+        "name": "haveNotCompareHashes",
+        "type": "error"
+    },
+    {
+        "inputs": [],
+        "name": "haveNotGrantedAccess",
+        "type": "error"
+    },
+    {
+        "inputs": [],
+        "name": "haveNotRegister",
+        "type": "error"
+    },
+    {
+        "inputs": [],
+        "name": "noFundToWithdraw",
+        "type": "error"
+    },
+    {
+        "inputs": [],
+        "name": "notContractOwner",
+        "type": "error"
+    },
+    {
+        "inputs": [],
+        "name": "notEnoughFund",
+        "type": "error"
+    },
+    {
+        "inputs": [],
+        "name": "youAreTheOwner",
+        "type": "error"
+    },
+    {
+        "anonymous": false,
+        "inputs": [
+            {
+                "indexed": true,
+                "internalType": "string",
+                "name": "ipfsURI",
+                "type": "string"
+            },
+            {
+                "indexed": true,
+                "internalType": "address",
+                "name": "customerAddr",
+                "type": "address"
+            }
+        ],
+        "name": "accessGranted",
+        "type": "event"
+    },
+    {
+        "anonymous": false,
+        "inputs": [
+            {
+                "indexed": true,
+                "internalType": "address",
+                "name": "customerAddr",
+                "type": "address"
+            },
+            {
+                "indexed": true,
+                "internalType": "uint256",
+                "name": "fundAmountl",
+                "type": "uint256"
+            }
+        ],
+        "name": "customerFunded",
+        "type": "event"
+    },
+    {
+        "anonymous": false,
+        "inputs": [
+            {
+                "indexed": true,
+                "internalType": "string",
+                "name": "encryptedSymmetricKey",
+                "type": "string"
+            }
+        ],
+        "name": "hashConfirmed",
+        "type": "event"
+    },
+    {
+        "inputs": [],
+        "name": "cancelRequest",
+        "outputs": [],
+        "stateMutability": "nonpayable",
+        "type": "function"
+    },
+    {
+        "inputs": [
+            {
+                "internalType": "string",
+                "name": "customerHash",
+                "type": "string"
+            }
+        ],
+        "name": "compareHashes",
+        "outputs": [],
+        "stateMutability": "nonpayable",
+        "type": "function"
+    },
+    {
+        "inputs": [],
+        "name": "digitalAssetPrice",
+        "outputs": [
+            {
+                "internalType": "uint256",
+                "name": "",
+                "type": "uint256"
+            }
+        ],
+        "stateMutability": "view",
+        "type": "function"
+    },
+    {
+        "inputs": [],
+        "name": "getEncryptedSymmetricKey",
+        "outputs": [
+            {
+                "internalType": "string",
+                "name": "",
+                "type": "string"
+            }
+        ],
+        "stateMutability": "view",
+        "type": "function"
+    },
+    {
+        "inputs": [
+            {
+                "internalType": "address",
+                "name": "customerAddr",
+                "type": "address"
+            }
+        ],
+        "name": "getIpfsURI",
+        "outputs": [
+            {
+                "internalType": "string",
+                "name": "",
+                "type": "string"
+            }
+        ],
+        "stateMutability": "view",
+        "type": "function"
+    },
+    {
+        "inputs": [],
+        "name": "getPrice",
+        "outputs": [
+            {
+                "internalType": "uint256",
+                "name": "",
+                "type": "uint256"
+            }
+        ],
+        "stateMutability": "view",
+        "type": "function"
+    },
+    {
+        "inputs": [],
+        "name": "getWithdrawableFund",
+        "outputs": [
+            {
+                "internalType": "uint256",
+                "name": "",
+                "type": "uint256"
+            }
+        ],
+        "stateMutability": "view",
+        "type": "function"
+    },
+    {
+        "inputs": [
+            {
+                "internalType": "address",
+                "name": "customerAddr",
+                "type": "address"
+            },
+            {
+                "internalType": "string",
+                "name": "encryptedFileHash",
+                "type": "string"
+            },
+            {
+                "internalType": "string",
+                "name": "encryptedSymmetricKey",
+                "type": "string"
+            },
+            {
+                "internalType": "string",
+                "name": "ipfsURI",
+                "type": "string"
+            }
+        ],
+        "name": "grantAccess",
+        "outputs": [],
+        "stateMutability": "nonpayable",
+        "type": "function"
+    },
+    {
+        "inputs": [],
+        "name": "owner",
+        "outputs": [
+            {
+                "internalType": "address",
+                "name": "",
+                "type": "address"
+            }
+        ],
+        "stateMutability": "view",
+        "type": "function"
+    },
+    {
+        "inputs": [],
+        "name": "registerRequest",
+        "outputs": [],
+        "stateMutability": "payable",
+        "type": "function"
+    },
+    {
+        "inputs": [
+            {
+                "internalType": "uint256",
+                "name": "newPrice",
+                "type": "uint256"
+            }
+        ],
+        "name": "updatePrice",
+        "outputs": [],
+        "stateMutability": "nonpayable",
+        "type": "function"
+    },
+    {
+        "inputs": [],
+        "name": "withdrawFund",
+        "outputs": [],
+        "stateMutability": "nonpayable",
+        "type": "function"
+    }
+]
